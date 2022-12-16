@@ -4,8 +4,6 @@ name: Build and Deploy
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
-  push:
     branches: ["nextjs"]
 
   # Allows you to run this workflow manually from the Actions tab
