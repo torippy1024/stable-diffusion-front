@@ -1,4 +1,4 @@
-import { AiFillCalculator, AiOutlineTwitter, AiFillFacebook, AiFillYoutube, AiFillGithub } from 'react-icons/ai';
+import { AiFillCalculator, AiFillGithub } from 'react-icons/ai';
 
 const Footer = () => {
   return (
