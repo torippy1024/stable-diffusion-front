@@ -6,8 +6,8 @@ type MenuType = {
 };
 
 const Header = () => {
-    const Menu = ({horizontal}: MenuType) => 
-      <ul className={`menu ${horizontal ? 'menu-horizontal' : 'bg-base-200'} p-0`}>
+  const Menu = ({horizontal}: MenuType) => 
+    <ul className={`menu ${horizontal ? 'menu-horizontal' : 'bg-base-200'} p-0`}>
       <li><a>hoge1</a></li>
       <li><a>hoge2</a></li>
       <li tabIndex={0}>
