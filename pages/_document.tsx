@@ -13,10 +13,10 @@ class MyDocument extends Document {
           <meta property='og:description' content='説明文' />
           <meta property='og:type' content='website' />
           <meta property='og:url' content='URL' />
-          <meta property='og:image' content='https://shima-usa.net/web-template/favicon.ico' />
+          <meta property='og:image' content='https://shima-usa.net/web-template/icon.svg' />
           <meta name='twitter:card' content='summary' />
           <meta name='twitter:site' content='URL' />
-          <meta name='twitter:image' content='https://shima-usa.net/web-template/favicon.ico' />
+          <meta name='twitter:image' content='https://shima-usa.net/web-template/icon.svg' />
         </Head>
         <body>
           <Main />
