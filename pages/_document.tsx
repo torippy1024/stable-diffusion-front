@@ -8,15 +8,15 @@ class MyDocument extends Document {
           <meta charSet='utf-8' />
           <meta name='format-detection' content='telephone=no' />
 
-          <meta property='og:site_name' content='サイト名' />
-          <meta property='og:title' content='タイトル' />
-          <meta property='og:description' content='説明文' />
+          <meta property='og:site_name' content='og:site_name' />
+          <meta property='og:title' content='og:title' />
+          <meta property='og:description' content='og:description' />
           <meta property='og:type' content='website' />
-          <meta property='og:url' content='URL' />
-          <meta property='og:image' content='https://shima-usa.net/web-template/icon.svg' />
+          <meta property='og:url' content='og:url' />
+          <meta property='og:image' content='https://shima-usa.net/web-template/icon.png' />
           <meta name='twitter:card' content='summary' />
-          <meta name='twitter:site' content='URL' />
-          <meta name='twitter:image' content='https://shima-usa.net/web-template/icon.svg' />
+          <meta name='twitter:site' content='https://shima-usa.net' />
+          <meta name='twitter:image' content='https://shima-usa.net/web-template/icon.png' />
         </Head>
         <body>
           <Main />
