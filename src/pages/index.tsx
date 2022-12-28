@@ -1,22 +1,17 @@
 import type {NextPage} from 'next';
 import Link from 'next/link';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Layout from '../components/layouts/Layout';
 
 const Home: NextPage = () => {
   return (
-    <div data-theme='light' className='flex flex-col min-h-screen'>
-      <Header />
-      <div className='grow container mx-auto my-4 px-4'>
-        <div>
-          hogehoge
-        </div>
-        <div className='btn btn-primary'>
-          <Link href='/page2'>link to page2</Link>
-        </div>
+    <Layout>
+      <div>
+        hogehoge
       </div>
-      <Footer />
-    </div>
+      <div className='btn btn-primary'>
+        <Link href='/page2'>link to page2</Link>
+      </div>
+    </Layout>
   );
 };
 
