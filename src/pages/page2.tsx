@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Footer from '../lib/components/Footer';
-import Header from '../lib/components/Header';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 const Page2 = () => {
   return (
