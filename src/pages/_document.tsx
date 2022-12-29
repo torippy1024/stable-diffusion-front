@@ -15,13 +15,13 @@ class MyDocument extends Document {
           <meta property='og:url' content='og:url' />
           <meta
             property='og:image'
-            content='https://shima-usa.net/web-template/icon.png'
+            content='https://shima-usa.net/web-template/img/icon/icon.png'
           />
           <meta name='twitter:card' content='summary' />
           <meta name='twitter:site' content='https://shima-usa.net' />
           <meta
             name='twitter:image'
-            content='https://shima-usa.net/web-template/icon.png'
+            content='https://shima-usa.net/web-template/img/icon/icon.png'
           />
         </Head>
         <body>
