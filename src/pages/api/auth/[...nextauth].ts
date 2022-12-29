@@ -1,5 +1,6 @@
 import NextAuth, {NextAuthOptions} from 'next-auth';
 import SpotifyProvider from 'next-auth/providers/spotify';
+import GithubProvider from 'next-auth/providers/github';
 
 const scope = [
   'playlist-read-private',
@@ -66,6 +67,10 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.SPOTIFY_CLIENT_ID || '',
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET || '',
       authorization: `https://accounts.spotify.com/authorize?scope=${scope.join()}`,
+    }),
+    GithubProvider({
+      clientId: process.env.GITHUB_ID || '',
+      clientSecret: process.env.GITHUB_SECRET || '',
     }),
   ],
   secret: process.env.SPOTIFY_CLIENT_SECRET || '',
