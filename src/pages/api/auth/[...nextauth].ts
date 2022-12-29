@@ -1,6 +1,7 @@
 import NextAuth, {NextAuthOptions} from 'next-auth';
 import SpotifyProvider from 'next-auth/providers/spotify';
 import GithubProvider from 'next-auth/providers/github';
+import CredentialsProvider from 'next-auth/providers/credentials';
 
 const scope = [
   'playlist-read-private',
@@ -63,6 +64,28 @@ const refreshAccessToken = async (token: any) => {
 
 export const authOptions: NextAuthOptions = {
   providers: [
+    ...(process.env.VERCEL_ENV === 'preview'
+      ? [
+          CredentialsProvider({
+            name: 'Credentials',
+            credentials: {
+              username: {
+                label: 'Username',
+                type: 'text',
+                placeholder: 'name',
+              },
+              password: {label: 'Password', type: 'password'},
+            },
+            async authorize(credentials) {
+              return {
+                id: 'id',
+                name: credentials?.username,
+                email: 'email@example.com',
+              };
+            },
+          }),
+        ]
+      : []),
     SpotifyProvider({
       clientId: process.env.SPOTIFY_CLIENT_ID || '',
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET || '',
