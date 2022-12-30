@@ -2,6 +2,7 @@ import NextAuth, {NextAuthOptions} from 'next-auth';
 import SpotifyProvider from 'next-auth/providers/spotify';
 import GithubProvider from 'next-auth/providers/github';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import {sha512} from 'js-sha512';
 
 const scope = [
   'playlist-read-private',
@@ -64,7 +65,7 @@ const refreshAccessToken = async (token: any) => {
 
 export const authOptions: NextAuthOptions = {
   providers: [
-    ...(process.env.VERCEL_ENV === 'preview'
+    ...(process.env.VERCEL_ENV === ''
       ? [
           CredentialsProvider({
             name: 'Credentials',
@@ -77,11 +78,19 @@ export const authOptions: NextAuthOptions = {
               password: {label: 'Password', type: 'password'},
             },
             async authorize(credentials) {
-              return {
-                id: 'id',
-                name: credentials?.username,
-                email: 'email@example.com',
-              };
+              const hash = sha512(credentials?.password || '');
+              if (
+                process.env.NEXTAUTH_CREDENTIAL_HASH &&
+                hash === process.env.NEXTAUTH_CREDENTIAL_HASH
+              ) {
+                return {
+                  id: 'id',
+                  name: credentials?.username,
+                  email: 'email@example.com',
+                };
+              } else {
+                return null;
+              }
             },
           }),
         ]
@@ -96,7 +105,6 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GITHUB_SECRET || '',
     }),
   ],
-  secret: process.env.SPOTIFY_CLIENT_SECRET || '',
   callbacks: {
     async jwt({token, account}) {
       if (account) {
