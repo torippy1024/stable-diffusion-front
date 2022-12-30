@@ -65,7 +65,7 @@ const refreshAccessToken = async (token: any) => {
 
 export const authOptions: NextAuthOptions = {
   providers: [
-    ...(process.env.VERCEL_ENV === ''
+    ...(process.env.VERCEL_ENV === 'preview'
       ? [
           CredentialsProvider({
             name: 'Credentials',
