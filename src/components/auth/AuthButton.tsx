@@ -4,7 +4,7 @@ type AuthButtonType = {
   className?: string;
 };
 
-const AuthButton = ({className}: AuthButtonType) => {
+const AuthButton = ({className = ''}: AuthButtonType) => {
   const {status} = useSession();
 
   return status === 'authenticated' ? (
