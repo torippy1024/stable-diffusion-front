@@ -5,8 +5,7 @@ import {
   PreviewCredentialsProvider,
   refreshAccessToken,
 } from '../../../utils/auth';
-
-const NEED_REFRESH_TOKEN = false;
+import {COMMON_CONFIG} from '../../../components/const';
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -34,7 +33,7 @@ export const authOptions: NextAuthOptions = {
           user,
         };
       }
-      if (!NEED_REFRESH_TOKEN) {
+      if (!COMMON_CONFIG.NEED_REFRESH_TOKEN) {
         return token;
       }
       if (token.accessTokenExpires && Date.now() < token.accessTokenExpires) {

@@ -1,5 +1,6 @@
 import {AiFillCalculator, AiFillGithub} from 'react-icons/ai';
 import ExternalLink from '../common/ExternalLink';
+import {COMMON_INFO} from '../const';
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
         <p>©torippy 2022</p>
       </div>
       <div className='grid-flow-col gap-4'>
-        <ExternalLink href='https://github.com/torippy1024'>
+        <ExternalLink href={COMMON_INFO.GITHUB_URL}>
           <AiFillGithub size={24} />
         </ExternalLink>
       </div>

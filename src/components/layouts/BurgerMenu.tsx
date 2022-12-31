@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import {slide as Menu} from 'react-burger-menu';
+import {COMMON_INFO} from '../const';
 
 type BurgerMenuType = {
   isOpen: boolean;
@@ -10,7 +11,9 @@ type BurgerMenuType = {
 const BurgerMenu = ({isOpen, handleClose, className}: BurgerMenuType) => {
   return (
     <Menu isOpen={isOpen} onClose={handleClose} className={`${className}`}>
-      <div className='font-bold text-3xl mb-2 border-b'>Next.js</div>
+      <div className='font-bold text-3xl mb-2 border-b'>
+        {COMMON_INFO.TITLE}
+      </div>
       <Link href='/' className='menu-item'>
         ホームページ
       </Link>
