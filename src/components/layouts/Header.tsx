@@ -28,9 +28,7 @@ const Header = () => {
           <a className='btn btn-ghost normal-case text-xl p-1'>Next.js</a>
         </div>
         <div className='flex items-center justify-center'>
-          <div className='mx-2'>
-            <AuthButton />
-          </div>
+          <AuthButton className='mx-2' />
         </div>
       </div>
     </div>
