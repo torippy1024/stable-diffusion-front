@@ -1,5 +1,4 @@
 import NextAuth, {NextAuthOptions} from 'next-auth';
-import SpotifyProvider from 'next-auth/providers/spotify';
 import GithubProvider from 'next-auth/providers/github';
 import {
   PreviewCredentialsProvider,
@@ -12,10 +11,6 @@ export const authOptions: NextAuthOptions = {
     ...(process.env.VERCEL_ENV === 'preview'
       ? [PreviewCredentialsProvider()]
       : []),
-    SpotifyProvider({
-      clientId: process.env.SPOTIFY_CLIENT_ID || '',
-      clientSecret: process.env.SPOTIFY_CLIENT_SECRET || '',
-    }),
     GithubProvider({
       clientId: process.env.GITHUB_ID || '',
       clientSecret: process.env.GITHUB_SECRET || '',
