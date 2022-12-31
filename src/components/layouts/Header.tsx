@@ -1,15 +1,15 @@
 import Head from 'next/head';
+import {MouseEventHandler, useState} from 'react';
 import {AiOutlineDown, AiOutlineMenu} from 'react-icons/ai';
 import AuthButton from '../auth/AuthButton';
+import BurgerMenu from './BurgerMenu';
 
 const Header = () => {
-  const Menu = () => (
-    <div className='flex items-center justify-center'>
-      <div className='mx-2'>
-        <AuthButton />
-      </div>
-    </div>
-  );
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setOpenMenu((openMenu) => !openMenu);
+  };
 
   return (
     <div>
@@ -19,12 +19,19 @@ const Header = () => {
         <link rel='icon' href={'/img/icon/favicon.ico'} />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
+      <BurgerMenu isOpen={openMenu} handleClose={toggleMenu} />
       <div className='navbar bg-base-200'>
-        <AiOutlineMenu />
+        <button onClick={toggleMenu} className='btn btn-ghost p-1'>
+          <AiOutlineMenu />
+        </button>
         <div className='flex-1'>
-          <a className='btn btn-ghost normal-case text-xl'>Next.js</a>
+          <a className='btn btn-ghost normal-case text-xl p-1'>Next.js</a>
         </div>
-        <Menu />
+        <div className='flex items-center justify-center'>
+          <div className='mx-2'>
+            <AuthButton />
+          </div>
+        </div>
       </div>
     </div>
   );
