@@ -1,4 +1,5 @@
 import Document, {Html, Head, Main, NextScript} from 'next/document';
+import {COMMON_INFO} from '../components/const';
 
 class MyDocument extends Document {
   render() {
@@ -8,21 +9,13 @@ class MyDocument extends Document {
           <meta charSet='utf-8' />
           <meta name='format-detection' content='telephone=no' />
 
-          <meta property='og:site_name' content='og:site_name' />
-          <meta property='og:title' content='og:title' />
-          <meta property='og:description' content='og:description' />
+          <meta property='og:site_name' content={COMMON_INFO.TITLE} />
+          <meta property='og:title' content={COMMON_INFO.TITLE} />
+          <meta property='og:description' content={COMMON_INFO.DESCRIPTION} />
           <meta property='og:type' content='website' />
-          <meta property='og:url' content='og:url' />
-          <meta
-            property='og:image'
-            content='https://shima-usa.net/web-template/img/icon/icon.png'
-          />
+          <meta property='og:url' content={COMMON_INFO.URL} />
+          <meta property='og:image' content={COMMON_INFO.ICON_URL} />
           <meta name='twitter:card' content='summary' />
-          <meta name='twitter:site' content='https://shima-usa.net' />
-          <meta
-            name='twitter:image'
-            content='https://shima-usa.net/web-template/img/icon/icon.png'
-          />
         </Head>
         <body>
           <Main />

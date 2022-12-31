@@ -1,6 +1,5 @@
 import NextAuth, {User} from 'next-auth';
 import {JWT} from 'next-auth/jwt';
-import Error from 'next/error';
 
 declare module 'next-auth' {
   interface Session {

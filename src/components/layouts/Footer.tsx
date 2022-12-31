@@ -1,20 +1,18 @@
 import {AiFillCalculator, AiFillGithub} from 'react-icons/ai';
+import ExternalLink from '../common/ExternalLink';
+import {COMMON_INFO} from '../const';
 
 const Footer = () => {
   return (
-    <footer className='footer items-center p-4 bg-neutral text-neutral-content'>
+    <footer className='footer p-4 bg-neutral text-neutral-content flex items-center justify-between'>
       <div className='items-center grid-flow-col'>
         <AiFillCalculator size={32} />
-        <p>Copyright © 2022 - All right reserved</p>
+        <p>©torippy 2022</p>
       </div>
-      <div className='grid-flow-col gap-4 md:place-self-center md:justify-self-end'>
-        <a
-          href='https://github.com/torippy1024'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
+      <div className='grid-flow-col gap-4'>
+        <ExternalLink href={COMMON_INFO.GITHUB_URL}>
           <AiFillGithub size={24} />
-        </a>
+        </ExternalLink>
       </div>
     </footer>
   );
