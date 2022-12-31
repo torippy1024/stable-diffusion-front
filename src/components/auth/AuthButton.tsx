@@ -1,19 +1,19 @@
 import {signIn, signOut, useSession} from 'next-auth/react';
 
-const AuthButton = () => {
+type AuthButtonType = {
+  className?: string;
+};
+
+const AuthButton = ({className}: AuthButtonType) => {
   const {status} = useSession();
 
-  return (
-    <div>
-      {status === 'authenticated' ? (
-        <div className='btn' onClick={() => signOut()}>
-          sign out
-        </div>
-      ) : (
-        <div className='btn' onClick={() => signIn()}>
-          sign in
-        </div>
-      )}
+  return status === 'authenticated' ? (
+    <div className={`btn ${className}`} onClick={() => signOut()}>
+      sign out
+    </div>
+  ) : (
+    <div className={`btn ${className}`} onClick={() => signIn()}>
+      sign in
     </div>
   );
 };
