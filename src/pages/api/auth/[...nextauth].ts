@@ -4,7 +4,7 @@ import {
   PreviewCredentialsProvider,
   refreshAccessToken,
 } from '../../../utils/auth';
-import {COMMON_CONFIG} from '../../../components/const';
+import {COMMON_CONFIG} from '../../../const';
 
 export const authOptions: NextAuthOptions = {
   providers: [

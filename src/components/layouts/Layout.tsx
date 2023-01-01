@@ -1,5 +1,5 @@
 import {ReactNode} from 'react';
-import {COMMON_INFO} from '../const';
+import {COMMON_INFO} from '../../const';
 import Footer from './Footer';
 import Header from './Header';
 

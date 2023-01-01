@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import {slide as Menu} from 'react-burger-menu';
-import {COMMON_INFO} from '../const';
+import {COMMON_INFO} from '../../const';
 
 type BurgerMenuType = {
   isOpen: boolean;
