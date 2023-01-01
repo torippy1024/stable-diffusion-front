@@ -1,6 +1,6 @@
 import {AiFillCalculator, AiFillGithub} from 'react-icons/ai';
 import ExternalLink from '../common/ExternalLink';
-import {COMMON_INFO} from '../const';
+import {COMMON_INFO} from '../../const';
 
 const Footer = () => {
   return (

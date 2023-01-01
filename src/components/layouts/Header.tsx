@@ -2,7 +2,7 @@ import Head from 'next/head';
 import {useState} from 'react';
 import {AiOutlineMenu} from 'react-icons/ai';
 import AuthButton from '../auth/AuthButton';
-import {COMMON_INFO} from '../const';
+import {COMMON_INFO} from '../../const';
 import BurgerMenu from './BurgerMenu';
 
 const Header = () => {

@@ -1,5 +1,5 @@
 import {signIn, signOut, useSession} from 'next-auth/react';
-import {COMMON_CONFIG} from '../const';
+import {COMMON_CONFIG} from '../../const';
 
 type AuthButtonType = {
   className?: string;

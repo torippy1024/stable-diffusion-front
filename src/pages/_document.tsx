@@ -1,5 +1,5 @@
 import Document, {Html, Head, Main, NextScript} from 'next/document';
-import {COMMON_INFO} from '../components/const';
+import {COMMON_INFO} from '../const';
 
 class MyDocument extends Document {
   render() {
