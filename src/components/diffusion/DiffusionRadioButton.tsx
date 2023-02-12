@@ -3,24 +3,29 @@ import {Dispatch, SetStateAction} from 'react';
 type RadioButtonType = {
   label: string;
   value: string;
+  color: string;
 };
 
 const radioButtons: RadioButtonType[] = [
   {
     label: '青',
     value: 'blue hair',
+    color: 'radio-info',
   },
   {
     label: '赤',
     value: 'red hair',
+    color: 'radio-error',
   },
   {
     label: '黄',
     value: 'blond hair',
+    color: 'radio-warning',
   },
   {
-    label: 'none',
+    label: '指定なし',
     value: '',
+    color: '',
   },
 ];
 
@@ -41,9 +46,9 @@ const DiffusionRadioButton = ({
       <div className='flex my-2'>
         <div>髪の色：</div>
         {radioButtons.map((radio) => (
-          <div key={radio.value} className='mr-2'>
+          <div key={radio.value} className='mr-2 flex'>
             <input
-              className='form-check-input'
+              className={`radio ${radio.color}`}
               type='radio'
               name='sweets'
               value={radio.value}
