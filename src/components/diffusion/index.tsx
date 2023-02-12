@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import fetchDeepl from '../../utils/deepl/fetchDeepl';
 import fetchDiffusion from '../../utils/diffusion/fetchDiffusion';
 import ImageBase64Viewer from '../common/ImageBase64Viewer';
 import DiffusionRadioButton from './DiffusionRadioButton';
@@ -12,10 +13,8 @@ const DiffusionContainer = () => {
 
   const handleClick = async () => {
     setLoading(true);
-    const promptTranslated: string = await fetch(`/api/deepl?text=${prompt}`)
-      .then((res) => res.json())
-      .then((data) => data.translations[0].text);
-    const imgUrl = await fetchDiffusion([promptTranslated, selected]);
+    const promptTranslated = await fetchDeepl(prompt);
+    const imgUrl = await fetchDiffusion([promptTranslated ?? prompt, selected]);
     setImgUrl(imgUrl);
     setLoading(false);
   };
