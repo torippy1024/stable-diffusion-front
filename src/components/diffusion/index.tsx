@@ -40,8 +40,7 @@ const DiffusionContainer = () => {
         >
           generate
         </button>
-        {loading && <div>Loading...</div>}
-        <ImageBase64Viewer imgUrl={imgUrl} alt={prompt} />
+        <ImageBase64Viewer imgUrl={imgUrl} alt={prompt} loading={loading} />
       </div>
     </div>
   );
